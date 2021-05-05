@@ -1,17 +1,22 @@
 # Google colab activities - PY
+<hr><hr>
 
 Activities in google colaboratory to learn about Machine Learning.
 
-<hr>
+<hr><hr>
 
-#### Libraries
+## Libraries
+
+<hr><hr>
 
 - [Pandas](https://pandas.pydata.org/)
 - [SKlearn](https://sklearn.org/)
 
-<hr>
+<hr><hr>
 
-#### Notes
+## Notes
+
+<hr><hr>
 
 ### Modelo de treinamento - LINEAR SVC
 
@@ -36,49 +41,53 @@ previsoes = modelo.predict(teste_x)
 acuracia = accuracy_score(teste_y, previsoes) * 100
 print("A acurácia foi %.2f%%" % acuracia)
 
-## Ensinando o algoritimo trabalhando com matrizes
+<hr>
+
+### Ensinando o algoritimo trabalhando com matrizes
 
 x_min = teste_x.horas_esperadas.min()
 x_max = teste_x.horas_esperadas.max()
 y_min = teste_x.preco.min()
 y_max = teste_x.preco.max()
 
-### Definindo espaçamento
+#### Definindo espaçamento
 
 pixels = 100
 eixo_x = np.arange(x_min, x_max, (x_max - x_min)/ pixels)
 eixo_y = np.arange(y_min, y_max, (y_max - y_min)/ pixels)
 
-### Criar grid (x mesclado com y)
+#### Criar grid (x mesclado com y)
 
 xx, yy = np.meshgrid(eixo_x, eixo_y)
 pontos = np.c_[xx.ravel(), yy.ravel()]
 
-### Pegar o modelo e prever para os pontos
+#### Pegar o modelo e prever para os pontos
 
 Z = modelo.predict(pontos)
 Z = Z.reshape(xx.shape)
 
-### Plotar
+#### Plotar
 
 import matplotlib.pyplot as plt
 
 plt.contourf(xx, yy, Z, alpha=0.3)
 
-### Analisar a curva de decisao - Decision Boundary (modificar a curva com o SEED)
+#### Analisar a curva de decisao - Decision Boundary (modificar a curva com o SEED)
 
 plt.scatter(teste_x.horas_esperadas, teste_x.preco, c=teste_y, s=1)
 
-### Testando precisão - baseline
+#### Testando precisão - baseline
 
 import numpy as np
 baseline = np.ones(540)
 acuracia = accuracy_score(teste_y, baseline)*100
 print("A acuracia do algoritimo de baseline foi %.2f%%" % acuracia)
 
-## Estimadores não lineares e vetor de suporte de maquina
+<hr>
 
-### Modelo de treinamento - não linear
+### Estimadores não lineares e vetor de suporte de maquina
+
+#### Modelo de treinamento - não linear
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -103,7 +112,7 @@ previsoes = modelo.predict(teste_x)
 acuracia = accuracy_score(teste_y, previsoes) * 100
 print("A acurácia foi %.2f%%" % acuracia)
 
-### Ensinando o algoritimo
+#### Ensinando o algoritimo
 
 data_x = teste_x[:,0]
 data_y = teste_x[:,1]
