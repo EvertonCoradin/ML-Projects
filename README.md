@@ -1,18 +1,14 @@
 # Google colab activities - PY
-<hr><hr>
 
 Activities in google colaboratory to learn about Machine Learning.
 
-<hr><hr>
 
 ## Libraries
 
-<hr><hr>
 
 - [Pandas](https://pandas.pydata.org/)
 - [SKlearn](https://sklearn.org/)
 
-<hr><hr>
 
 ## Notes
 
