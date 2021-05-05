@@ -12,8 +12,6 @@ Activities in google colaboratory to learn about Machine Learning.
 
 ## Notes
 
-<hr><hr>
-
 ### Modelo de treinamento - LINEAR SVC
 
 x = dados[['horas_esperadas', 'preco']]
